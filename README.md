@@ -66,14 +66,15 @@ Unlike conventional implementations, all Digital Twin computations are performed
 
 # 🔧 Hardware Components
 
-| Component | Purpose |
-|-----------|---------|
-| ESP32-WROOM-32 | Embedded Digital Twin |
-| LM2596 Buck Converter | Physical system under observation |
-| ACS712-20A Current Sensor | Output current measurement |
-| Voltage Divider Network | Input/Output voltage sensing |
-| 12V Li-ion Battery | Power source |
-| 5V DC Gear Motor | Dynamic load |
+| Component | Specification | Purpose |
+|-----------|---------------|---------|
+| **ESP32-WROOM-32** | Dual-core MCU, 240 MHz, 12-bit ADC, Wi-Fi | Performs sensing, Digital Twin computation, and cloud communication |
+| **LM2596 Buck Converter** | 4–40 V Input, 1.23–37 V Output, up to 3 A | Physical power converter under observation |
+| **ACS712-20A Current Sensor** | 100 mV/A sensitivity, 0–5 V analog output | Measures output current *(I<sub>out</sub>)* |
+| **3S Li-ion Battery Pack (18650)** | 11.1 V nominal, 12.6 V fully charged | Input power supply |
+| **Input Voltage Divider** | 10 kΩ + 3.3 kΩ | Scales input voltage *(V<sub>in</sub>)* to ESP32 ADC range |
+| **Output Voltage Divider** | 2.3 kΩ + 3.3 kΩ | Scales output voltage *(V<sub>out</sub>)* to ESP32 ADC range |
+| **5 V DC Gear Motor** | Rated 5 V, ~150–250 mA | Dynamic load for testing |
 
 ---
 
